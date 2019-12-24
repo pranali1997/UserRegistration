@@ -31,6 +31,25 @@ public class UserRegistration {
             return "inValid";
         }
     }
+    public String mobileNumber(String mobileNumber) {
+        String pattern="^[+][0-9]{1,3}[ ]{1}[0-9]{5}[ ]?[0-9]{5}$";
+        if (mobileNumber.matches(pattern)) {
+            return "valid";
+        }
+        else{
+            return "inValid";
+        }
+    }
 
 
+    public String passWord(String passWordName) {
+        String pattern="^[0-9a-zA-Z]{8,}$";
+        if (passWordName.matches(pattern)) {
+            return "valid";
+        }
+        else
+        {
+            return "inValid";
+        }
+    }
 }

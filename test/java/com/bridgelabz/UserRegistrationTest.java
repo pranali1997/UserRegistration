@@ -105,4 +105,35 @@ public class UserRegistrationTest {
     }
 
 
+    @Test
+    public void whenGivenMobileNumber_ContainsTenDigits_ShouldReturnValid() {
+        UserRegistration userRegistration = new UserRegistration();
+        String message = userRegistration.mobileNumber("+91 9876543210");
+        Assert.assertEquals("valid",message);
+    }
+    @Test
+    public void whenGivenMobileNumber_DoNotContainsSpaceBetweenCountryCodeAndNumber_ShouldReturnInValid_() {
+        UserRegistration userRegistration = new UserRegistration();
+        String message = userRegistration.mobileNumber("+911234567890");
+        Assert.assertEquals("inValid",message);
+    }
+    @Test
+    public void whenGivenMobileNumber_ContainsLessThanTenNumbers_ShouldReturnInValid() {
+        UserRegistration userRegistration = new UserRegistration();
+        String message = userRegistration.mobileNumber("+91 123456");
+        Assert.assertEquals("inValid",message);
+    }
+    @Test
+    public void whenGivenMobileNumber_DoNotContainCountryCode_ShouldReturnInValid() {
+        UserRegistration userRegistration = new UserRegistration();
+        String message =userRegistration.mobileNumber("8888888888");
+        Assert.assertEquals("inValid",message);
+    }
+
+    @Test
+    public void whenGivenPassword_HaveMinimumEightCharacters_ShouldReturnValid() {
+        UserRegistration userRegistration = new UserRegistration();
+        String message = userRegistration.passWord("pranalilembhe");
+        Assert.assertEquals("valid",message);
+    }
 }
