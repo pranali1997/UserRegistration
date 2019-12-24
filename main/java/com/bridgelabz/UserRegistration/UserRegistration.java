@@ -21,4 +21,16 @@ public class UserRegistration {
             return "inValid";
         }
     }
+
+    public String emailId(String email) {
+        String pattern="^[0-9a-zA-Z]+([.+_-]?[0-9a-zA-Z]+)*([@][0-9a-zA-Z]+){1}([.][a-zA-Z]{2,3}){1,2}$";
+        if (email.matches(pattern)) {
+            return "valid";
+        }
+        else {
+            return "inValid";
+        }
+    }
+
+
 }

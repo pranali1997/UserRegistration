@@ -75,4 +75,34 @@ public class UserRegistrationTest {
         String message = userRegistration.lastName("PLembhe");
         Assert.assertEquals("inValid",message);
     }
+
+    @Test
+    public void whenGivenEmail_ContainsOnlyThreeMandatoryParts_ShouldReturnValid() {
+        UserRegistration userRegistration = new UserRegistration();
+        String message=userRegistration.emailId("pranali@gmail.com");
+        Assert.assertEquals("valid",message);
+    }
+
+    @Test
+    public void whenGivenEmail_ContainsAllParts_ShouldReturnValid() {
+        UserRegistration userRegistration = new UserRegistration();
+        String message = userRegistration.emailId("pranali.lembhe@bridgelabz.com.in");
+        Assert.assertEquals("valid",message);
+    }
+
+    @Test
+    public void whenGivenEmail_StartsWithDot_ShouldReturnInValid() {
+        UserRegistration userRegistration = new UserRegistration();
+        String message = userRegistration.emailId(".lembhe77@gmail.com");
+        Assert.assertEquals("inValid",message);
+    }
+
+    @Test
+    public void whenGivenEmail_ContainsMoreThanThreeCharactersForCountryCode_shouldReturnInValid() {
+        UserRegistration userRegistration = new UserRegistration();
+        String message = userRegistration.emailId("pranali.lembhe@gmail.asddf");
+        Assert.assertEquals("inValid",message);
+    }
+
+
 }
