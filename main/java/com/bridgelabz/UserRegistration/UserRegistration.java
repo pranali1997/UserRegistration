@@ -11,4 +11,14 @@ public class UserRegistration {
             return "inValid";
         }
     }
+
+    public String lastName(String lastName) {
+        String pattern="^[A-Z]{1}[a-z]{2,}$";
+        if (lastName.matches(pattern)) {
+            return "valid";
+        }
+        else {
+            return "inValid";
+        }
+    }
 }
