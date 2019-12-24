@@ -43,7 +43,7 @@ public class UserRegistration {
 
 
     public String passWord(String passWordName) {
-        String pattern="(?=.*[A-Z])(?=.*[a-z]).{7,}";
+        String pattern="(?=.*[A-Z])(?=.*[a-z]).{8,}";
         if (passWordName.matches(pattern)) {
             return "valid";
         }

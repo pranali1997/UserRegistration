@@ -144,6 +144,10 @@ public class UserRegistrationTest {
         Assert.assertEquals("valid",message);
     }
 
-
-
+    @Test
+    public void whenGivenPassword_HaveAtLeastOneLowerCaseCharacter_shouldReturnValid() {
+        UserRegistration userRegistration = new UserRegistration();
+        String message =userRegistration.passWord("PRANALIlEMBHE");
+        Assert.assertEquals("valid",message);
+    }
 }
