@@ -133,9 +133,17 @@ public class UserRegistrationTest {
     @Test
     public void whenGivenPassword_HaveMinimumEightCharacters_ShouldReturnValid() {
         UserRegistration userRegistration = new UserRegistration();
-        String message = userRegistration.passWord("pranalilembhe");
+        String message = userRegistration.passWord("Pranalilembhe");
         Assert.assertEquals("valid",message);
     }
+
+    @Test
+    public void whenGivenPassword_HaveAtLeastOneUpperCaseCharacter_ShouldReturnValid() {
+        UserRegistration userRegistration = new UserRegistration();
+        String message = userRegistration.passWord("pranaliLembhe");
+        Assert.assertEquals("valid",message);
+    }
+
 
 
 }
