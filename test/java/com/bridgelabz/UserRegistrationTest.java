@@ -133,21 +133,28 @@ public class UserRegistrationTest {
     @Test
     public void whenGivenPassword_HaveMinimumEightCharacters_ShouldReturnValid() {
         UserRegistration userRegistration = new UserRegistration();
-        String message = userRegistration.passWord("Pranalilembhe");
+        String message = userRegistration.passWord("Pranalilemb3he");
         Assert.assertEquals("valid",message);
     }
 
     @Test
     public void whenGivenPassword_HaveAtLeastOneUpperCaseCharacter_ShouldReturnValid() {
         UserRegistration userRegistration = new UserRegistration();
-        String message = userRegistration.passWord("pranaliLembhe");
+        String message = userRegistration.passWord("pranaliLembhe2");
         Assert.assertEquals("valid",message);
     }
 
     @Test
     public void whenGivenPassword_HaveAtLeastOneLowerCaseCharacter_shouldReturnValid() {
         UserRegistration userRegistration = new UserRegistration();
-        String message =userRegistration.passWord("PRANALIlEMBHE");
+        String message =userRegistration.passWord("PRANALIlEMBHE1");
+        Assert.assertEquals("valid",message);
+    }
+
+    @Test
+    public void whenGivenPassword_HaveAtLeastOneNumericNumber_ShouldReturnValid() {
+        UserRegistration userRegistration = new UserRegistration();
+        String message = userRegistration.passWord("pranali1Lembhe");
         Assert.assertEquals("valid",message);
     }
 }
