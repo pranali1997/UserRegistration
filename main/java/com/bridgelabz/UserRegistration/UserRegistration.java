@@ -22,13 +22,13 @@ public class UserRegistration {
         }
     }
 
-    public String emailId(String email) {
+    public Boolean emailId(String email) {
         String pattern="^[0-9a-zA-Z]+([.+_-]?[0-9a-zA-Z]+)*([@][0-9a-zA-Z]+){1}([.][a-zA-Z]{2,3}){1,2}$";
         if (email.matches(pattern)) {
-            return "valid";
+            return true;
         }
         else {
-            return "inValid";
+            return false;
         }
     }
     public String mobileNumber(String mobileNumber) {
@@ -43,7 +43,7 @@ public class UserRegistration {
 
 
     public String passWord(String passWordName) {
-        String pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])(?=.*[+@#$%^&*!.-]).{8,}";
+        String pattern="((?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{7,})*[+@#$%^&*!.()-]{1}";
         if (passWordName.matches(pattern)) {
             return "valid";
         }

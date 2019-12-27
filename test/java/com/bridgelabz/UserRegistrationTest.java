@@ -79,29 +79,29 @@ public class UserRegistrationTest {
     @Test
     public void whenGivenEmail_ContainsOnlyThreeMandatoryParts_ShouldReturnValid() {
         UserRegistration userRegistration = new UserRegistration();
-        String message=userRegistration.emailId("pranali@gmail.com");
-        Assert.assertEquals("valid",message);
+        Boolean message=userRegistration.emailId("pranali@gmail.com");
+        Assert.assertEquals(true,message);
     }
 
     @Test
     public void whenGivenEmail_ContainsAllParts_ShouldReturnValid() {
         UserRegistration userRegistration = new UserRegistration();
-        String message = userRegistration.emailId("pranali.lembhe@bridgelabz.com.in");
-        Assert.assertEquals("valid",message);
+        Boolean message = userRegistration.emailId("pranali.lembhe@bridgelabz.com.in");
+        Assert.assertEquals(true,message);
     }
 
     @Test
     public void whenGivenEmail_StartsWithDot_ShouldReturnInValid() {
         UserRegistration userRegistration = new UserRegistration();
-        String message = userRegistration.emailId(".lembhe77@gmail.com");
-        Assert.assertEquals("inValid",message);
+        Boolean message = userRegistration.emailId(".lembhe77@gmail.com");
+        Assert.assertEquals(false,message);
     }
 
     @Test
     public void whenGivenEmail_ContainsMoreThanThreeCharactersForCountryCode_shouldReturnInValid() {
         UserRegistration userRegistration = new UserRegistration();
-        String message = userRegistration.emailId("pranali.lembhe@gmail.asddf");
-        Assert.assertEquals("inValid",message);
+        Boolean message = userRegistration.emailId("pranali.lembhe@gmail.asddf");
+        Assert.assertEquals(false,message);
     }
 
 
@@ -147,7 +147,7 @@ public class UserRegistrationTest {
     @Test
     public void whenGivenPassword_HaveAtLeastOneLowerCaseCharacter_shouldReturnValid() {
         UserRegistration userRegistration = new UserRegistration();
-        String message =userRegistration.passWord("PRANALIlEMBHE%1");
+        String message =userRegistration.passWord("PRANALIlEMBHE2%");
         Assert.assertEquals("valid",message);
     }
 
@@ -161,7 +161,9 @@ public class UserRegistrationTest {
     @Test
     public void whenGivenPassword_ShouldHaveExactlyOneSpecialCharacter_shouldReturnValid() {
         UserRegistration userRegistration = new UserRegistration();
-        String message = userRegistration.passWord("pranali1Lembhe*");
+        String message = userRegistration.passWord("pranali1Lembhe@");
         Assert.assertEquals("valid",message);
     }
+
+
 }
